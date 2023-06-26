@@ -28,6 +28,9 @@ ALLOWED_HOSTS = ['cartelera-cine-python.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
