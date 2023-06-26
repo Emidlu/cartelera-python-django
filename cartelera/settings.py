@@ -7,10 +7,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-
 from pathlib import Path
 import os
-from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +28,7 @@ ALLOWED_HOSTS = ['cartelera-cine-python.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 
 INSTALLED_APPS = [
@@ -76,27 +74,13 @@ WSGI_APPLICATION = 'cartelera.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('MYSQL_DB'),  # Nombre de tu base de datos
-        'USER': config('MYSQL_USER'),  # Usuario de la base de datos
-        'PASSWORD': config('MYSQL_PASSWORD'),  # Contraseña de la base de datos
-        'HOST': config('MYSQL_HOST'),  # Host de la base de datos
-        'PORT': config('MYSQL_PORT'),  # Puerto de la base de datos,
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-            'sql_mode': 'traditional',
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
