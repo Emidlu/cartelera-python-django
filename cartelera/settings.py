@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-mu7n#z-u6rw%k9ohq+5g-a^3#_d0lnwp!ce0$-n8n%$@=d5!7+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cinema-python-production.up.railway.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['cartelera-cine-python.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
